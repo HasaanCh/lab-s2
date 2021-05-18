@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
     getData(1);
 
+    $('.prev.nav-button').addClass('disabled');
     function getData(pagenum) {
         $.ajax({
             type: "get",
@@ -21,10 +22,14 @@ jQuery(document).ready(function ($) {
 
     $('.next.nav-button').click(function () {
         getData(2);
+        $('.next.nav-button').addClass('disabled');
+        $('.prev.nav-button').removeClass('disabled');
     });
 
     $('.prev.nav-button').click(function () {
         getData(1);
+        $('.prev.nav-button').addClass('disabled');
+        $('.next.nav-button').removeClass('disabled');
     });
 
 });
