@@ -1,67 +1,65 @@
-
-/* Inline #1 | https://waydevelopers.tech/webass/api/ */
-
 .main-data {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .record {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .record li {
-    font-size: 17px;
+  display: flex;
+  flex-direction: column;
+}
 
-    margin-left: 13px;
-  }
-  
-  .record {
-    margin-bottom: 20px;
-  }
+.record {
+  display: flex;
+  flex-direction: column;
+}
+
+.record li {
+  font-size: 17px;
+
+  margin-left: 13px;
+}
+
+.record {
+  margin-bottom: 20px;
+}
 
 
 .record .id {
-    display: none;
-  }
-  
-  
-/* Inline #1 | https://waydevelopers.tech/webass/api/ */
+  display: none;
+}
 
-.button-group {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .button {
-    margin-right: 20px;
-    padding: 10px;
-    color: white;
-    background-color: black;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  /* .del-button {
-    margin-right: 20px;
-    padding: 10px;
-    color: white;
-    background-color: black;
-    border-radius: 10px;
-    cursor: pointer;
-  } */
-  
 
-/* Inline #1 | https://waydevelopers.tech/webass/api/ */
+
+.button {
+  margin-right: 20px;
+  padding: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
 h2 {
-    display: flex;
-    justify-content: center;
-  }
-  
+  display: flex;
+  justify-content: center;
+}
+
 
 
 .avatar.record-list {
   list-style: none;
+}
+
+
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.prev.nav-button {
+  margin-right: 20px;
+}
+
+
+
+.footer {
+  justify-content: center;
+  display: flex;
 }
