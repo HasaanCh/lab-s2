@@ -1,7 +1,10 @@
 jQuery(document).ready(function ($) {
-    getData(1);
+    getData(currentpage);
+    var numofpages;
+    var currentpage = 1;
 
-    $('.prev.nav-button').addClass('disabled');
+    
+
     function getData(pagenum) {
         $.ajax({
             type: "get",
@@ -10,6 +13,9 @@ jQuery(document).ready(function ($) {
                 $('.main-data').append('<p class="loading">Loading.....</p>');
             },
             success: function (response) {
+                
+                numofpages = response.total_pages;
+                checkpage();
                 $('.main-data').html('');
                 console.log(response);
                 for (var i = 0; i < response.data.length; i++) {
@@ -20,16 +26,36 @@ jQuery(document).ready(function ($) {
         });
     }
 
+    function checkpage()
+    {
+        console.log("num of pages:"+numofpages);
+        console.log("current page:"+currentpage);
+        if (currentpage < numofpages) {
+            $('.prev.nav-button').addClass('disabled');
+            $('.next.nav-button').removeClass('disabled');
+        }
+
+        else {
+            $('.next.nav-button').addClass('disabled');
+            $('.prev.nav-button').removeClass('disabled');
+        }
+    }
+
     $('.next.nav-button').click(function () {
-        getData(2);
-        $('.next.nav-button').addClass('disabled');
-        $('.prev.nav-button').removeClass('disabled');
+        getData(currentpage + 1);
+        currentpage = currentpage + 1;
+        console.log(currentpage);
+        checkpage();
+       
+
     });
 
     $('.prev.nav-button').click(function () {
-        getData(1);
-        $('.prev.nav-button').addClass('disabled');
-        $('.next.nav-button').removeClass('disabled');
+        getData(currentpage - 1);
+        currentpage = currentpage - 1;
+        console.log(currentpage);
+        checkpage();
+       
     });
 
 });
